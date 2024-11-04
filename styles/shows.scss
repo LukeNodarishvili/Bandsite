@@ -1,0 +1,220 @@
+@use "./partials/variables.scss" as *;
+@use "./partials/breakpoints.scss" as *;
+@use "./partials/bodystyle.scss" as *;
+@use "./partials/footerstyle.scss" as *;
+
+header {
+  background-color: $footer-header-colour;
+  color: $footer-header-colour-text;
+
+  display: flex;
+  flex-direction: column;
+  .topbar {
+    display: flex;
+    flex-direction: column;
+    @include tabletscreen {
+      flex-direction: row;
+      height: 5rem;
+      align-items: center;
+    }
+    @include computerscreen {
+      flex-direction: row;
+      height: 5rem;
+      align-items: center;
+    }
+    &__picture {
+      position: relative;
+    }
+    &__heading {
+      position: absolute;
+      top: 4%;
+      padding: 0px 4% 0 4%;
+      width: fit-content;
+      @include tabletscreen {
+        left: 2rem;
+      }
+      @include computerscreen {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        &-music-embed {
+          width: 50%;
+        }
+      }
+    }
+
+    &__img {
+      margin-top: $mobile-margin-16;
+      margin-bottom: $mobile-margin-16;
+      margin-left: auto;
+      margin-right: auto;
+      @include tabletscreen {
+        margin-top: $tablet-or-computer-margin-36;
+        margin-bottom: $tablet-or-computer-margin-36;
+        margin-left: 2.5rem;
+        margin-right: 5rem;
+      }
+      @include computerscreen {
+        margin-top: $tablet-or-computer-margin-36;
+        margin-bottom: $tablet-or-computer-margin-36;
+        margin-left: 2.5rem;
+        margin-right: 5rem;
+      }
+      height: 1.25rem;
+      width: 7.5rem;
+    }
+    &__nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      @include tabletscreen {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      @include computerscreen {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+    }
+    &__unorderedlist {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    &__link {
+      text-decoration: none;
+      color: $footer-header-colour-text;
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+      padding: 1rem;
+      border-bottom: 0.25rem solid rgba(255, 255, 255, 0);
+      &--current-page {
+        border-bottom: 0.25rem solid white;
+        @include tabletscreen {
+          border-bottom: 4px solid white;
+          padding-bottom: 1.75rem;
+          padding-top: 1.75rem;
+        }
+        @include computerscreen {
+          border-bottom: 4px solid white;
+          padding-bottom: 1.75rem;
+          padding-top: 1.75rem;
+        }
+      }
+    }
+  }
+  .picture-title {
+    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    opacity: 60%;
+    height: 22rem;
+    padding: $mobile-margin-16;
+    @include tabletscreen {
+      height: 52vh;
+      padding: $tablet-or-computer-margin-48;
+    }
+    @include computerscreen {
+      height: 48vh;
+      padding: 10rem;
+    }
+  }
+}
+
+.shows {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  @include tabletscreen {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @include computerscreen {
+    display: flex;
+    &__title {
+      padding-right: 1rem;
+      padding-left: 5rem;
+    }
+    &__computer-screen {
+      padding-top: 3rem;
+      width: 82%;
+      padding-right: 5rem;
+    }
+  }
+  &__shows-bar-wide {
+    display: flex;
+    color: #afafaf;
+    font-weight: 600;
+    gap: 60%;
+    padding-right: 64%;
+    @include phonescreen {
+      display: none;
+    }
+  }
+  .individual-show:hover {
+    background-color: #fafafa;
+  }
+  .individual-show--clicked {
+    background-color: #e1e1e1;
+  }
+}
+.individual-show {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+  @include tabletscreen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include computerscreen {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__label {
+    color: #afafaf;
+    @include tabletscreen {
+      display: none;
+    }
+    @include computerscreen {
+      display: none;
+    }
+  }
+  &__data {
+    padding: 0.25rem;
+    width: 45%;
+
+    &--date {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    &--others {
+      font-size: 1.25rem;
+    }
+  }
+  &__buy-tickets {
+    font-family: avenir-Next-Reg;
+    border-style: solid;
+    border-color: #323232;
+    color: #fafafa;
+    background-color: #323232;
+    border-radius: 5px;
+    width: 100%;
+    height: 3rem;
+    @include tabletscreen {
+      width: 30%;
+    }
+    @include computerscreen {
+      width: 30%;
+    }
+  }
+}

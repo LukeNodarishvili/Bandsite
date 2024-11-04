@@ -1,0 +1,305 @@
+@use "./partials/variables.scss" as *;
+@use "./partials/breakpoints.scss" as *;
+@use "./partials/bodystyle.scss" as *;
+@use "./partials/footerstyle.scss" as *;
+
+header {
+  background-color: $footer-header-colour;
+  color: $footer-header-colour-text;
+
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  display: flex;
+  flex-direction: column;
+  @include tabletscreen {
+    flex-direction: row;
+    height: 5rem;
+    align-items: center;
+  }
+  @include computerscreen {
+    flex-direction: row;
+    height: 5rem;
+    align-items: center;
+  }
+  &__picture {
+    position: relative;
+  }
+  &__header {
+    position: absolute;
+    top: 34%;
+    left: 1rem;
+    @include tabletscreen {
+      left: 2rem;
+    }
+    @include computerscreen {
+      left: 8rem;
+    }
+  }
+
+  &__img {
+    margin-top: $mobile-margin-16;
+    margin-bottom: $mobile-margin-16;
+    margin-left: auto;
+    margin-right: auto;
+    @include tabletscreen {
+      margin-top: $tablet-or-computer-margin-36;
+      margin-bottom: $tablet-or-computer-margin-36;
+      margin-left: 2.5rem;
+      margin-right: 5rem;
+    }
+    @include computerscreen {
+      margin-top: $tablet-or-computer-margin-36;
+      margin-bottom: $tablet-or-computer-margin-36;
+      margin-left: 2.5rem;
+      margin-right: 5rem;
+    }
+    height: 1.25rem;
+    width: 7.5rem;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    @include tabletscreen {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    @include computerscreen {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+  &__unorderedlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    &--item {
+      @extend .topbar__unorderedlist;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $footer-header-colour-text;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border-bottom: 0.25rem solid rgba(255, 255, 255, 0);
+    &--current-page {
+      border-bottom: 0.25rem solid white;
+      @include tabletscreen {
+        border-bottom: 0.25rem solid white;
+        padding-bottom: 1.75rem;
+        padding-top: 1.75rem;
+      }
+      @include computerscreen {
+        border-bottom: 0.25rem solid white;
+        padding-bottom: 1.75rem;
+        padding-top: 1.75rem;
+      }
+    }
+  }
+}
+.picture-title {
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  opacity: 60%;
+  height: 30vh;
+  padding: $mobile-margin-16;
+
+  @include tabletscreen {
+    height: 48vh;
+    padding: $tablet-or-computer-margin-48;
+  }
+  @include computerscreen {
+    height: 48vh;
+    padding: 10rem;
+  }
+}
+
+.musicians-article {
+  margin: 1rem;
+  @include tabletscreen {
+    margin-left: 7.625rem;
+    margin-right: 7.625rem;
+  }
+  @include computerscreen {
+    margin-left: 7.625rem;
+    margin-right: 7.625rem;
+  }
+  &__contents {
+    @include computerscreen {
+      margin-left: 7.625rem;
+      margin-right: 7.625rem;
+    }
+  }
+  &__img {
+    margin: $mobile-margin-16;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include computerscreen {
+      width: 100%;
+    }
+  }
+  &__paragraph {
+    @include tabletscreen {
+      display: flex;
+      gap: 1rem;
+    }
+    @include computerscreen {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+.photo-gallery {
+  background-color: #fafafa;
+  display: flex;
+  flex-wrap: wrap;
+  &__heading {
+    padding-left: $mobile-margin-16;
+  }
+  &__images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  img {
+    margin: 1rem;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    @include tabletscreen {
+      width: 28%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include computerscreen {
+      width: 30%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.community {
+  width: 90%;
+  @include tabletscreen {
+    width: 70%;
+  }
+  @include computerscreen {
+    width: 40%;
+  }
+  padding: 0.5rem;
+  font-family: avenir-Next-reg;
+  margin-left: auto;
+  margin-right: auto;
+}
+.form {
+  border-bottom: 1px solid #e1e1e1;
+  &__label {
+    color: #afafaf;
+    font-weight: 700;
+    margin-top: 0.75rem;
+    &--upper {
+      margin-left: 4.2rem;
+      @extend .form__label;
+    }
+  }
+  &__upper {
+    display: flex;
+    align-items: center;
+    &--image {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      border-radius: 50%;
+    }
+    &--text {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      width: 100%;
+      height: 2.25rem;
+      border-color: #e1e1e1;
+      border-style: solid;
+      border-radius: 0.25rem;
+      padding: 0.375rem;
+      font-family: avenir-Next-Reg;
+      background-color: #fafafa;
+    }
+  }
+  &__lower {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4.2rem;
+    margin-bottom: 0.75rem;
+    &--text {
+      height: 6.25rem;
+      border-color: #e1e1e1;
+      border-style: solid;
+      border-radius: 0.25rem;
+      margin-bottom: 0.75rem;
+      margin-top: 0.25rem;
+      padding: 0.375rem;
+      text-align: left;
+      vertical-align: top;
+      font-family: avenir-Next-Reg;
+      background-color: #fafafa;
+    }
+    &--submit {
+      height: 2.5rem;
+      border-color: #323232;
+      border-style: solid;
+      border-radius: 0.25rem;
+      background-color: #323232;
+      color: #fafafa;
+      font-weight: 700;
+      font-size: 1.2rem;
+      @include tabletscreen {
+        width: 30%;
+        margin-left: 70%;
+      }
+      @include computerscreen {
+        width: 30%;
+        margin-left: 70%;
+      }
+    }
+  }
+}
+.comment {
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  &__image {
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 50%;
+    background-color: #e1e1e1;
+  }
+  &__main {
+    width: 82%;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    &--date {
+      color: #afafaf;
+    }
+  }
+}

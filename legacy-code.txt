@@ -1,0 +1,198 @@
+
+
+<h1>Join the Conversation</h1>
+          <form action="#">
+      <div class="comments__comment-box">
+        <div class="comments__comment-box__img-textbox">
+          <img src="./Assets/Images/Mohan-muruge.jpg" alt="Default Avatar" />
+
+            <label for="name"><p>Name</p></label>
+            <input name="name" />
+        </div>
+
+        <div class="comments__comment-box__textbox-button">
+          <p class="comments__comment-box__textbox-button__Label">Comment</p>
+            <input name="comment" />
+
+          <button>Comment</button>
+                    </form>
+        </div>
+      </div>
+
+      <div class="comments__comment-list">
+        <article><p>Example comment</p></article>
+      </div>
+
+      margin-left: 1rem;
+  &__comment-box {
+    color: hotpink;
+    &__img-textbox {
+      img {
+        width: 36px; //temp value
+        height: 36px; //temp value
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+      }
+      display: flex;
+      .comment {
+        height: 36px;
+      }
+    }
+    &__textbox-button {
+      margin-left: 6rem;
+    }
+  }
+
+  console.log("debug_0");
+//fishish "Load comments" Asap (preferably on the train).If you have energy left you can do make comments aswell.(dont kill yourself)
+
+let comments = [
+  {
+    name: "Bobert  bobybob",
+    date: "02/17/2021",
+    pfp: "N/A",
+    txt: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserve reverence. Let us appreciate this for what it is and what it contains.",
+  },
+  {
+    name: "Bobert  bobybob",
+    date: "02/17/2021",
+    pfp: "N/A",
+    txt: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserve reverence. Let us appreciate this for what it is and what it contains.",
+  },
+];
+
+function mAkeComment() {}
+
+function lOadComments() {
+  let comments = document.querySelector("comment-section__comments__article");
+
+  for (let i = 0; i < comments.length; i++) {
+    console.log("debug2");
+    let current_comment = document.createElement("article");
+  }
+}
+lOadComments();
+
+/*
+
+  myAppointmentsEl.innerHTML = "";
+  
+  for (let i = 0; i < appointments.length; i++) {
+    //it looks at how long the list is and goes though each entity
+    const cardEl = document.createElement("article"); // this part... makes an <article> and adds the class = "Appointment"
+    cardEl.classList.add("appointment");
+
+    const headingEl = document.createElement("h3"); // this one makes a H3 and puts the i inside... AH HA
+    headingEl.innerText = appointments[i].name; // They take the NUMBER that I is. and go into the list looking for the INDEX...
+    //they then put the "name" part of that index in the H3
+
+    const dateEl = document.createElement("span"); // they look to be doing a similar thing here and using a span (???(?))
+    dateEl.innerText = appointments[i].date;// the "span" name is more a missnomer. their the same. see nots for details
+
+    cardEl.appendChild(headingEl); //this where they add the two parts to the card.a flex then makes it flat with a gap imbetween
+    cardEl.appendChild(dateEl);
+
+    myAppointmentsEl.appendChild(cardEl);
+  } // do not use above code, only reverce engineer and understand (Comment the [Sailor mouth] out of it)
+*/
+
+<article class="shows__individual-show" onclick="changeColor(this)">
+          <div class="shows__individual-show__data">
+            <p class="shows__individual-show__label">DATE</p>
+            <!--remove on widescreen mode-->
+            <p class="shows__individual-show__data__date">Mon Sept 06 2021</p>
+          </div>
+          <div class="shows__individual-show__data">
+            <p class="shows__individual-show__label">VENUE</p>
+            <p class="shows__individual-show__data__others">Ronald Lane</p>
+          </div>
+          <div class="shows__individual-show__data">
+            <p class="shows__individual-show__label">LOCATION</p>
+            <p class="shows__individual-show__data__others">
+              San Francisco, CA
+            </p>
+          </div>
+          <button class="shows__individual-show__buy-tickets">
+            Buy Tickets
+          </button>
+        </article>
+
+        function displayComments(event) {
+  //make this only push to the array, and then refesh the... comments by deleting them do innterHTML = ""
+  event.preventDefault();
+  console.log("debug_1");
+  const targetHTML = document.getElementById("commentSection");
+  let createdArticle = document.createElement("article"); //makes the main article box
+  createdArticle.classList.add("comment-section__comments__article"); // adds CSS class to the box
+  //in logic we add the image to this, THEN after add the next line:
+
+  let articleHTML = document.createElement("div"); //makes the text div
+  articleHTML.classList.add("comment-section__comments__article__text");
+  //in logic once the text div is made we then put in the header__date div in:
+
+  let headerdateDiv = document.createElement("div"); //makes the username and date div
+  headerdateDiv.classList.add("comment-section__comments__article__headerdate");
+  //then only after do we add the comment text
+
+  //Making variables and HTML for adding to the above Divs
+
+  //let nameText = userComments[i].name;//finds the string
+  let nameText = document.getElementById("form-name").value;
+  let nameHTML = document.createElement("p"); //makes the P tag to put the string into
+  nameHTML.innerText = nameText; //puts the string into the P tag inside the "box" so it can be used later.
+  console.log(nameText);
+
+  let dateText = new Date().toISOString().split("T")[0];
+  let dateHTML = document.createElement("p");
+  dateHTML.innerText = dateText;
+
+  //    let commentText = userComments[i].txt;
+  let commentText = document.getElementById("form-comment").value;
+  let commentHTML = document.createElement("p");
+  commentHTML.innerText = commentText;
+
+  let pfpSrc = "n/a"; //userComments[i].pfp;
+  let pfpHTML = document.createElement("img"); //if PFP is blank/set to N/A it will simply use the backup
+  pfpHTML.setAttribute("src", pfpSrc);
+  pfpHTML.classList.add("comment-section__comments__article__image");
+
+  //Adding the Divs and P tags together and then formating
+
+  headerdateDiv.appendChild(nameHTML); //adds text to Div 4 in two parts for CSS reasons
+  headerdateDiv.appendChild(dateHTML);
+
+  articleHTML.appendChild(headerdateDiv); //adds Div 4
+  articleHTML.appendChild(commentHTML); //adds P 5 below Div 4
+
+  createdArticle.appendChild(pfpHTML);
+  createdArticle.appendChild(articleHTML);
+  console.log(createdArticle);
+  //console.log(targetHTML);
+  targetHTML.appendChild(createdArticle);
+
+  //console.log(createdArticle);
+
+  //add image
+  //}
+}
+
+<!-- Test article, Use as needed <article class="comment-section__comments__article">
+          <img
+            class="comment-section__comments__article__image"
+            src="./Assets/Images/Mohan-muruge.jpg"
+            alt="PfP"
+          />
+          <div class="comment-section__comments__article__text">
+            <div class="comment-section__comments__article__headerdate">
+              <p>name</p>
+              <p>date</p>
+            </div>
+            <p>
+              This is art. This is inexplicable magic expressed in the purest
+              way, everything that makes up this majestic work deserves
+              reverence. Let us appreciate this for what it is and what it
+              contains.
+            </p>
+          </div>
+        </article>-->
